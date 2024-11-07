@@ -1,0 +1,114 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* This file is for your main application CSS */
+
+
+/* body { */
+/*   font-family: 'Arial', sans-serif; */
+/*   background-color: #f4f4f4; */
+/*   display: flex; */
+/*   justify-content: center; */
+/*   align-items: center; */
+/*   height: 100vh; */
+/*   margin: 0; */
+/* } */
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  padding: 20px;
+  margin: 20px;
+  text-align: left;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.card h3 {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #555;
+}
+
+.card-content {
+  margin-top: 20px;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.card-label {
+  font-weight: bold;
+  color: #555;
+}
+
+.card-value {
+  color: #777;
+}
+
+.card-row:last-child {
+  margin-bottom: 0;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+/*  added manualy by me  */
+.utilities {
+  height: 100vh;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  overflow: scroll;
+}
+
+body {
+  transition: all 0.9s;
+}
+
+.devices-modal {
+  height: 60vh;
+  width: 60vh;
+  padding: 20px;
+  overflow: scroll;
+}

@@ -1,0 +1,45 @@
+<main>
+  <MyAppUiWeb.DeviceLive.TelemtryComponent.comp
+    temp={assigns.temp}
+    memory={assigns.memory}
+    network_latency={assigns.network_latency}
+    network_name={assigns.network_name}
+    disk_usage={assigns.disk_usage}
+    cpu_usage={assigns.cpu_usage}
+    cpu_frequency={assigns.cpu_frequency}
+    is_selected={trying(assigns.selected_tab, "telemetry")}
+  />
+
+  <MyAppUiWeb.DeviceLive.LiveDevice.comp
+    devices={assigns.devices}
+    show_info={assigns.show_info}
+    info_content={assigns.info_content}
+    is_selected={trying(assigns.selected_tab, "devices")}
+  />
+
+  <MyAppUiWeb.DeviceLive.AlbumViewer.comp
+    images={assigns.images}
+    socket={assigns.socket}
+    selected_image={assigns.selected_image}
+    show_popup={assigns.show_popup}
+  />
+
+  <MyAppUiWeb.DeviceLive.WifiSet.comp
+    networks={assigns.networks}
+    current_network={assigns.current_network}
+    modal_open={assigns.modal_open}
+    form={assigns.form}
+    refreshed={assigns.refreshed}
+    is_selected={trying(assigns.selected_tab, "wifi")}
+  />
+
+  <MyAppUiWeb.DeviceLive.System.comp
+    uptime={assigns.uptime}
+    is_selected={trying(assigns.selected_tab, "system")}
+  />
+
+  <MyAppUiWeb.DeviceLive.Dmesg.comp
+    dmesg_stream={assigns.dmesg_stream}
+    is_selected={trying(assigns.selected_tab, "dmesg")}
+  />
+</main>

@@ -1,0 +1,127 @@
+<main>
+  <MyAppUiWeb.DeviceLive.TelemtryComponent.comp />
+  <section id="devices" class="tab-content hidden">
+    <h2>Connected Devices</h2>
+    <div class="device">
+      <h3>Camera</h3>
+      <p>/dev/video0</p>
+      <p>Uptime: 24h</p>
+      <p>Health: Good</p>
+      <button onclick="showPopup('camera-config')">Configure</button>
+      <button onclick="showPopup('camera-logs')">View Logs</button>
+      <div class="popup" id="camera-config">
+        <h3>Camera Configuration</h3>
+        <button class="close-btn" onclick="closePopup('camera-config')">Close</button>
+      </div>
+      <div class="popup" id="camera-logs">
+        <h3>Camera Logs</h3>
+        <button class="close-btn" onclick="closePopup('camera-logs')">Close</button>
+      </div>
+      <div>
+        <h4>API Information</h4>
+        <p>URL: http://localhost:5000/camera</p>
+        <p>Port: 5000</p>
+        <div class="chart"></div>
+      </div>
+    </div>
+    <div class="device">
+      <h3>Audio Array</h3>
+      <p>/dev/audio1</p>
+      <p>Uptime: 24h</p>
+      <p>Health: Good</p>
+      <button onclick="showPopup('audio-config')">Configure</button>
+      <button onclick="showPopup('audio-logs')">View Logs</button>
+      <div class="popup" id="audio-config">
+        <h3>Audio Configuration</h3>
+        <button class="close-btn" onclick="closePopup('audio-config')">Close</button>
+      </div>
+      <div class="popup" id="audio-logs">
+        <h3>Audio Logs</h3>
+        <button class="close-btn" onclick="closePopup('audio-logs')">Close</button>
+      </div>
+      <div>
+        <h4>API Information</h4>
+        <p>URL: http://localhost:5001/audio</p>
+        <p>Port: 5001</p>
+        <div class="chart"></div>
+      </div>
+    </div>
+    <div class="device">
+      <h3>Temperature Sensor</h3>
+      <p>/dev/tempsensor</p>
+      <p>Uptime: 24h</p>
+      <p>Health: Good</p>
+      <button onclick="showPopup('temp-config')">Configure</button>
+      <button onclick="showPopup('temp-logs')">View Logs</button>
+      <div class="popup" id="temp-config">
+        <h3>Temperature Sensor Configuration</h3>
+        <button class="close-btn" onclick="closePopup('temp-config')">Close</button>
+      </div>
+      <div class="popup" id="temp-logs">
+        <h3>Temperature Sensor Logs</h3>
+        <button class="close-btn" onclick="closePopup('temp-logs')">Close</button>
+      </div>
+      <div>
+        <h4>API Information</h4>
+        <p>URL: http://localhost:5002/temp</p>
+        <p>Port: 5002</p>
+        <div class="chart"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wifi" class="tab-content hidden">
+    <h2>WiFi Configuration</h2>
+    <button onclick="showPopup('wifi-connect')">Connect to WiFi</button>
+    <div class="popup" id="wifi-connect">
+      <h3>Connect to WiFi</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>SSID</th>
+            <th>Signal Strength</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Network 1</td>
+            <td>-40 dBm</td>
+          </tr>
+          <tr>
+            <td>Network 2</td>
+            <td>-70 dBm</td>
+          </tr>
+          <tr>
+            <td>Network 3</td>
+            <td>-60 dBm</td>
+          </tr>
+        </tbody>
+      </table>
+      <label for="security">Security Type:</label>
+      <select id="security" onchange="showSecurityOptions()">
+        <option value="wpa2">WPA2</option>
+        <option value="wpa3">WPA3</option>
+        <option value="none">None</option>
+      </select>
+      <div id="security-options">
+        <label for="password">Password:</label>
+        <input type="password" id="password" />
+      </div>
+      <button class="close-btn" onclick="closePopup('wifi-connect')">Submit</button>
+    </div>
+  </section>
+
+  <section id="system" class="tab-content hidden">
+    <h2>System Information</h2>
+    <p>Uptime: 72h</p>
+    <p>Firmware Version: 1.0.2</p>
+    <div class="ascii-art">
+      <pre>
+  _______   ____  ______   ____
+ / ___/ /  / __ \/  _/ | / / /
+/ /__/ /__/ /_/ // //  |/ / /__
+\___/____/\____/___/_/|_/____/
+                </pre>
+    </div>
+  </section>
+</main>

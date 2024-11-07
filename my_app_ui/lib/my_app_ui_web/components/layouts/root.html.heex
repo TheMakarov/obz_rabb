@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="csrf-token" content={get_csrf_token()} />
+    <.live_title suffix=" · by Obz">
+      <%= assigns[:page_title] || "Obz RRab UI" %>
+    </.live_title>
+    <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
+
+    <style>
+      body {
+        font-family: 'Courier New', Courier, monospace;
+        color: #000;
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+        header {
+          background-color: #000;
+          color: #fff;
+          text-align: center;
+          padding: 1em 0;
+          font-size: 1.5em;
+        }
+
+        nav {
+          background-color: #333;
+          color: #fff;
+          display: flex;
+          justify-content: space-around;
+          padding: 0.5em 0;
+        }
+
+        nav a {
+          color: #fff;
+          text-decoration: none;
+          padding: 0.5em 1em;
+          font-size: 1em;
+          text-transform: uppercase;
+        }
+
+        nav a:hover {
+          background-color: #555;
+        }
+
+        main {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          padding: 1em;
+          overflow-y: auto;
+        }
+
+        section {
+          margin-bottom: 2em;
+        }
+
+      .device-info, .tinyml-data {
+        border: 1px solid #000;
+        padding: 1em;
+      }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 1em;
+        }
+
+        table, th, td {
+          border: 1px solid #000;
+        }
+
+        th, td {
+          padding: 0.5em;
+          text-align: left;
+        }
+
+        th {
+          cursor: pointer;
+        }
+
+        footer {
+          text-align: center;
+          padding: 1em 0;
+          background-color: #000;
+          color: #fff;
+        }
+
+      .hidden {
+        display: none;
+      }
+
+      .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #000;
+        background-color: #fff;
+        padding: 1em;
+        z-index: 10;
+      }
+
+      .popup.active {
+        display: block;
+      }
+
+      .close-btn {
+        background-color: #000;
+        color: #fff;
+        border: none;
+        padding: 0.5em 1em;
+        cursor: pointer;
+        margin-top: 1em;
+      }
+
+      .chart {
+        width: 100px;
+        height: 100px;
+        background: conic-gradient(
+          #4caf50 40%,
+          #ff9800 40% 70%,
+          #f44336 70%);
+        border-radius: 50%;
+      }
+
+      .ascii-art {
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        white-space: pre;
+      }
+        
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Obz RRab UI</h1>
+    </header>
+
+    <nav>
+      <a class="telemetry" phx-click="select_tab" phx-value-tab="telemetry" href="#telemetry">
+        Telemetry
+      </a>
+      <a class="devices" phx-click="select_tab" phx-value-tab="devices" href="#devices">
+        Devices
+      </a>
+      <a class="wifi" phx-click="select_tab" phx-value-tab="wifi" href="#wifi">WiFi</a>
+      <a class="dmesg" phx-click="select_tab" phx-value-tab="dmesg" href="#dmesg">Dmesg</a>
+      <a class="system" phx-click="select_tab" phx-value-tab="system" ref="#system">System</a>
+    </nav>
+
+    <%= @inner_content %>
+
+    <footer style="position: relative;margin-top: auto;">
+      <p>&copy; 2024 Obz RRab UI</p>
+    </footer>
+
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"} />
+  </body>
+</html>
